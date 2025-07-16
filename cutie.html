@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Cutie Boss ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #f8bbd0, #d1c4e9);
+            color: #5d4037;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Udaipur-themed background */
+        .udaipur-background {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .mountains {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #4e342e 0%, #795548 40%, #a1887f 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 30%, 80% 20%, 60% 30%, 40% 15%, 20% 25%, 0 20%);
+            z-index: 2;
+        }
+        
+        .lake {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            background: linear-gradient(to top, #1e88e5, #64b5f6);
+            z-index: 3;
+            opacity: 0.7;
+        }
+        
+        .palace {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 100px;
+            background: #ffd54f;
+            border-radius: 10px 10px 0 0;
+            z-index: 4;
+            box-shadow: 0 0 20px rgba(255, 213, 79, 0.5);
+        }
+        
+        .palace::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            background: #ffb74d;
+            clip-path: polygon(0 100%, 10% 0, 20% 100%, 30% 0, 40% 100%, 50% 0, 60% 100%, 70% 0, 80% 100%, 90% 0, 100% 100%);
+        }
+        
+        .palace-tower {
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 70px;
+            background: #ffb74d;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .palace-tower::before {
+            content: '🏰';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 25px;
+        }
+        
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            z-index: 20;
+            margin-top: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo i {
+            font-size: 4rem;
+            color: #d81b60;
+            margin: 0 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #880e4f;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+            font-family: 'Dancing Script', cursive;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            color: #6a1b9a;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        /* Romantic message section */
+        .romantic-message {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 3px solid #f48fb1;
+            max-width: 800px;
+            position: relative;
+            z-index: 20;
+            text-align: center;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .romantic-message:before {
+            content: '❤️';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 3rem;
+            z-index: 5;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .romantic-message h2 {
+            font-size: 2.5rem;
+            color: #d81b60;
+            margin-bottom: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .romantic-message p {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #5d4037;
+            font-style: italic;
+        }
+        
+        .romantic-message p:last-child {
+            margin-bottom: 0;
+            font-weight: bold;
+            color: #d81b60;
+            font-size: 2rem;
+        }
+        
+        /* Photo section */
+        .photo-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 3rem 0;
+            position: relative;
+            z-index: 20;
+        }
+        
+        .envelope {
+            width: 360px;
+            height: 480px;
+            perspective: 1500px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .envelope-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+        }
+        
+        .envelope:hover .envelope-inner {
+            transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+        }
+        
+        .envelope-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f8bbd0, #e1bee7);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            border: 8px solid white;
+            overflow: hidden;
+            backface-visibility: hidden;
+            z-index: 2;
+        }
+        
+        .envelope-label {
+            background: #d81b60;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .photo-container {
+            width: 100%;
+            height: 320px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid white;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .envelope:hover .photo-container img {
+            transform: scale(1.05);
+        }
+        
+        .photo-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f8bbd0, #e1bee7);
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .photo-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: #d81b60;
+        }
+        
+        .photo-placeholder h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .photo-instruction {
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            color: #5d4037;
+            font-size: 0.9rem;
+        }
+        
+        /* Request section */
+        .request-section {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 3px solid #4fc3f7;
+            max-width: 700px;
+            text-align: center;
+            position: relative;
+            z-index: 20;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .request-section h2 {
+            font-size: 2.8rem;
+            color: #0288d1;
+            margin-bottom: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .request-content {
+            font-size: 1.8rem;
+            margin: 2rem 0;
+            color: #5d4037;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .sticker {
+            position: absolute;
+            font-size: 4rem;
+            animation: bounce 3s infinite;
+        }
+        
+        .sticker-1 {
+            top: -40px;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+        
+        .sticker-2 {
+            bottom: -40px;
+            right: 10%;
+            transform: rotate(10deg);
+        }
+        
+        .request-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            height: 80px;
+        }
+        
+        .yes-btn {
+            background: linear-gradient(to right, #4caf50, #2e7d32);
+            color: white;
+            border: none;
+            padding: 1.5rem 3.5rem;
+            font-size: 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            z-index: 30;
+            transform: scale(1.1);
+            animation: pulse 2s infinite;
+        }
+        
+        .yes-btn::before {
+            content: '❤️';
+            margin-right: 12px;
+            font-size: 2.5rem;
+        }
+        
+        .yes-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.6);
+        }
+        
+        .no-btn {
+            background: linear-gradient(to right, #f44336, #c62828);
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+            z-index: 20;
+        }
+        
+        .no-btn::before {
+            content: '❌';
+            margin-right: 10px;
+        }
+        
+        /* Popup styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-content {
+            background: linear-gradient(to bottom right, #fff9c4, #c8e6c9);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            position: relative;
+            border: 5px solid #f48fb1;
+            transform: scale(0.8);
+            transition: transform 0.4s ease;
+        }
+        
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+        
+        .popup-content h2 {
+            font-size: 2.2rem;
+            color: #d81b60;
+            margin-bottom: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .popup-content p {
+            font-size: 1.8rem;
+            margin: 1.5rem 0;
+            color: #5d4037;
+        }
+        
+        .popup-sticker {
+            font-size: 4.5rem;
+            margin: 1rem 0;
+            animation: bounce 2s infinite;
+        }
+        
+        .close-popup {
+            background: #d81b60;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(216, 27, 96, 0.4);
+        }
+        
+        .close-popup:hover {
+            background: #ad1457;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #000000;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 20;
+            font-weight: 600;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            30% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            60% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(216, 27, 96, 0.7);
+            animation: floatHeart 15s infinite linear;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1100px) {
+            .photo-section {
+                gap: 30px;
+            }
+            
+            .envelope {
+                width: 300px;
+                height: 420px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .photo-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .envelope {
+                width: 100%;
+                max-width: 450px;
+                height: 500px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .romantic-message {
+                padding: 1.5rem;
+            }
+            
+            .romantic-message p {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .request-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .request-content {
+                font-size: 1.5rem;
+            }
+            
+            .yes-btn {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.6rem;
+            }
+            
+            .no-btn {
+                padding: 1rem 2rem;
+                font-size: 1.5rem;
+            }
+            
+            .envelope {
+                height: 400px;
+            }
+            
+            .romantic-message p {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts" id="floating-hearts"></div>
+    
+    <!-- Udaipur Background -->
+    <div class="udaipur-background">
+        <div class="lake"></div>
+        <div class="mountains"></div>
+        <div class="palace">
+            <div class="palace-tower"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h1>For My Cutie Boss ❤️</h1>
+            <div class="subtitle">The most beautiful doctor in my life</div>
+        </header>
+        
+        <!-- Romantic message section -->
+        <div class="romantic-message">
+            <h2>My Dearest Love</h2>
+            <p>Every moment with you feels like standing atop the most beautiful mountain, where the view takes my breath away and my heart feels at home.</p>
+            <p>With you, life is an endless adventure filled with love, laughter, and unforgettable memories.</p>
+            <p>You're the sunshine that brightens my world and the peace that calms my soul.</p>
+            <p>This is my way to make you feel special ❤️</p>
+        </div>
+        
+        <div class="photo-section">
+            <!-- First Envelope - Us First Time -->
+            <div class="envelope">
+                <div class="envelope-inner">
+                    <div class="envelope-front">
+                        <div class="envelope-label">Us First Time</div>
+                        <div class="photo-container">
+                            <img src="first_time.jpg" alt="Our first time together">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <h3>Our First Time Together</h3>
+                                <p>This special moment will appear here</p>
+                                <div class="photo-instruction">Replace with your photo named "first_time.jpg"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Envelope - Your Beautiful Smile -->
+            <div class="envelope">
+                <div class="envelope-inner">
+                    <div class="envelope-front">
+                        <div class="envelope-label">Your Beautiful Smile</div>
+                        <div class="photo-container">
+                            <img src="beautiful_smile.jpg" alt="Your beautiful smile">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-smile"></i>
+                                <h3>Your Beautiful Smile</h3>
+                                <p>That smile that brightens my world</p>
+                                <div class="photo-instruction">Replace with your photo named "beautiful_smile.jpg"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third Envelope - Cute Us -->
+            <div class="envelope">
+                <div class="envelope-inner">
+                    <div class="envelope-front">
+                        <div class="envelope-label">Cute Us</div>
+                        <div class="photo-container">
+                            <img src="cute_us.jpg" alt="Cute us together">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-users"></i>
+                                <h3>Cute Us Together</h3>
+                                <p>Our most adorable moment</p>
+                                <div class="photo-instruction">Replace with your photo named "cute_us.jpg"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="request-section">
+            <h2>A Special Request</h2>
+            <div class="request-content">
+                <div class="sticker sticker-1">💌</div>
+                <p>Hey Cutie! ❤️</p>
+                <p>Could you please send me "that pic"? You know the one that makes my heart skip a beat!</p>
+                <p>Please? 🥺</p>
+                <div class="sticker sticker-2">💕</div>
+            </div>
+            
+            <div class="request-buttons">
+                <button class="yes-btn" id="yesBtn">Yes, of course!</button>
+                <button class="no-btn" id="noBtn">No way!</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Happy Popup -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <div class="popup-sticker">💖</div>
+            <h2>Thank You Cutie Boss!</h2>
+            <p>You just made me so happy! ❤️</p>
+            <p>I love you more than words can say!</p>
+            <button class="close-popup">close & Feel Loved</button>
+        </div>
+    </div>
+    
+    <footer>
+        Made with endless love for the most wonderful girlfriend and doctor ❤️
+    </footer>
+    
+    <script>
+        // Create floating hearts
+        const floatingHearts = document.getElementById('floating-hearts');
+        for (let i = 0; i < 30; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            floatingHearts.appendChild(heart);
+        }
+        
+        // No button movement
+        const noBtn = document.getElementById('noBtn');
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth) - 100;
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight) - 100;
+            
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        });
+        
+        // Prevent clicking on "No" button
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            noBtn.style.display = 'none';
+            setTimeout(() => {
+                noBtn.style.display = 'block';
+            }, 1000);
+        });
+        
+        // Yes button functionality
+        const yesBtn = document.getElementById('yesBtn');
+        const popup = document.getElementById('popup');
+        
+        yesBtn.addEventListener('click', () => {
+            popup.classList.add('active');
+        });
+        
+        // Close popup
+        document.querySelector('.close-popup').addEventListener('click', () => {
+            popup.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
